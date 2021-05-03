@@ -8,16 +8,8 @@ import { Observable } from "rxjs";
 })
 export class TaskService {
 
-  //UNCOMMENT the appropriate apiUrl for the specific backend framework
-
-  // Java Spring Boot uses port 8080
-  //apiUrl: string = "http://localhost:8080/tasks";
-
-  // C# dotnetcore uses port 5000
-  //apiUrl: string = "http://localhost:5000/api/tasks";
-
-  // Express will use port 3000
-  //apiUrl: string = "http://localhost:3001/tasks";
+  // Express will use port 3001
+  apiUrl: string = "http://localhost:3001/tasks";
 
   constructor(private http: HttpClient) {}
 
