@@ -37,8 +37,15 @@
 <button class="btn btn-sm btn-outline-primary mr-2" (click)="dp.navigateTo({year: 2022, month: 5})">To May 2022</button>
 
 <hr/>
+
 <pre>Month: {{ date.month }}.{{ date.year }}</pre>
-<pre>Model:{{ model | json }}</pre>
+
+<hr/>
+
+<ngb-timepicker [(ngModel)]="time"></ngb-timepicker>
+<hr>
+<pre>Selected time: {{time | json}}</pre>
+<hr/>
 
         <div class="form-group">
             <button class="btn btn-primary">Submit</button>
