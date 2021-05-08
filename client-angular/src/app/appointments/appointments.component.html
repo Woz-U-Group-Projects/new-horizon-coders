@@ -1,0 +1,48 @@
+
+<div class= "container">
+    <h1>Appointments</h1>
+    <router-outlet></router-outlet>
+</div >
+<div class="container">
+<form>
+        <div class="form-group">
+            <label for="first_name">First Name: </label>
+            <input required type="text" class="form-control" ngModel name="first_name" #first_name="ngModel">
+            <div class="alert alert-danger" *ngIf="first_name.touched && !first_name.valid">Required Field</div>
+        </div>
+        <div class="form-group">
+            <label for="last_name">Last Name: </label>
+            <input required type="text" class="form-control" ngModel name="last_name" #last_name="ngModel">
+            <div class="alert alert-danger" *ngIf="last_name.touched && !last_name.valid">Required Field</div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email: </label>
+            <input required type="text" class="form-control" ngModel name="email" #email="ngModel">
+            <div class="alert alert-danger" *ngIf="email.touched && !email.valid">Required Field</div>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number: </label>
+            <input required  maxLength="10" type="integer" class="form-control" ngModel name="phone" #phone="ngModel">
+            <div class="alert alert-danger" *ngIf="phone.touched && !phone.valid">Required Field</div>
+        </div> 
+
+        <p>Select Appointment</p>
+
+<ngb-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next"></ngb-datepicker>
+
+<hr/>
+
+<button class="btn btn-sm btn-outline-primary mr-2" (click)="selectToday()">Select Today</button>
+<button class="btn btn-sm btn-outline-primary mr-2" (click)="dp.navigateTo()">To current month</button>
+<button class="btn btn-sm btn-outline-primary mr-2" (click)="dp.navigateTo({year: 2022, month: 5})">To May 2022</button>
+
+<hr/>
+<pre>Month: {{ date.month }}.{{ date.year }}</pre>
+<pre>Model:{{ model | json }}</pre>
+
+        <div class="form-group">
+            <button class="btn btn-primary">Submit</button>
+        </div>
+    
+</form>
+</div>
