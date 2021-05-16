@@ -1,7 +1,27 @@
-
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./home">Walk the Dog & services</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="#">Sign In/Log in</a>
+              <a class="nav-link" href="./appointments">Appointments</a>
+              <a class="nav-link" href="#">Profiles</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
 <div class= "container">
     <h1>Appointments</h1>
+
+    
     <router-outlet></router-outlet>
+
+   
    
 </div >
 <div class="container">
@@ -35,22 +55,30 @@
 
 <button class="btn btn-sm btn-outline-primary mr-2" (click)="selectToday()">Select Today</button>
 <button class="btn btn-sm btn-outline-primary mr-2" (click)="dp.navigateTo()">To current month</button>
-<button class="btn btn-sm btn-outline-primary mr-2" (click)="dp.navigateTo({year: 2022, month: 5})">To May 2022</button>
+<button class="btn btn-sm btn-outline-primary mr-2" (click)="dp.navigateTo({year: 2025, month: 1})">To Jan 2025</button>
 
 <hr/>
 
-<pre>Month: {{ date.month }}.{{ date.year }}</pre>
+<h3>Month: {{ date.month }}.{{date.today}} {{ date.year }}</h3>
 
 <hr/>
 
 <ngb-timepicker [(ngModel)]="time"></ngb-timepicker>
 <hr>
-<pre>Selected time: {{time | json}}</pre>
+<h3>Selected time: {{time | json}}</h3>
 <hr/>
 
         <div class="form-group">
-            <button class="btn btn-primary">Submit</button>
+            <h3>Add Appointment</h3>
+   <button (click)="addAppointment()" class="btn btn-primary">Add</button>
+           
         </div>
     
 </form>
+
 </div>
+<!-- <tr *ngFor="let appointment of appointments">
+  <ul>{{appointment_Id}}
+  {{appointment_date}}
+  {{confirmation}}
+  </ul> -->

@@ -66,6 +66,25 @@
                 }
             }
         },
+        "Signups": {
+            "tableName": "Signups",
+            "indexes": {
+                "8761300c82a8ecf330311af649a5271f19cfa295": {
+                    "name": "PRIMARY",
+                    "unique": true,
+                    "using": "BTREE",
+                    "fields": [
+                        {
+                            "name": "id"
+                        }
+                    ],
+                    "options": {
+                        "indexName": "PRIMARY",
+                        "indicesType": "UNIQUE"
+                    }
+                }
+            }
+        },
         "staff": {
             "tableName": "staff",
             "indexes": {
@@ -109,5 +128,5 @@
             "indexes": []
         }
     },
-    "revision": 5
+    "revision": 6
 }

@@ -19,6 +19,53 @@
                 }
             }
         },
+        "customers": {
+            "tableName": "customers",
+            "indexes": {
+                "fd89b0b2b695fcf25239db333bc8a6f30902822c": {
+                    "name": "PRIMARY",
+                    "unique": true,
+                    "using": "BTREE",
+                    "fields": [
+                        {
+                            "name": "customer_Id"
+                        }
+                    ],
+                    "options": {
+                        "indexName": "PRIMARY",
+                        "indicesType": "UNIQUE"
+                    }
+                },
+                "4891616bbc7308a612267a22629ed2e79be02aba": {
+                    "name": "email",
+                    "unique": true,
+                    "using": "BTREE",
+                    "fields": [
+                        {
+                            "name": "email"
+                        }
+                    ],
+                    "options": {
+                        "indexName": "email",
+                        "indicesType": "UNIQUE"
+                    }
+                },
+                "46903bb50d5a2f6e934d53ece01fe66e84883992": {
+                    "name": "password_Id",
+                    "unique": true,
+                    "using": "BTREE",
+                    "fields": [
+                        {
+                            "name": "password_Id"
+                        }
+                    ],
+                    "options": {
+                        "indexName": "password_Id",
+                        "indicesType": "UNIQUE"
+                    }
+                }
+            }
+        },
         "staff": {
             "tableName": "staff",
             "indexes": {
@@ -62,5 +109,5 @@
             "indexes": []
         }
     },
-    "revision": 4
+    "revision": 5
 }

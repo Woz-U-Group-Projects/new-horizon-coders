@@ -1,17 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AppointmentsService } from "../appointments.service";
 import { Appointments } from "../models/appointments";
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-appointments',
   templateUrl: './appointments.component.html',
   styleUrls: ['./appointments.component.css']
 })
+
+
+
+
 export class AppointmentsComponent implements OnInit {
 
   constructor(private appointmentsService: AppointmentsService) { }
   newAppointment: Appointments = new Appointments();
   appointments: Appointments[] = [];
+
   getAppointments() {
     this.appointmentsService.getAppointments().subscribe(appointments => (this.appointments = appointments));
   }
@@ -21,8 +27,15 @@ export class AppointmentsComponent implements OnInit {
       this.newAppointment = new Appointments();
     });
   }
+
+
+  
+
 //create update & delete functions to complete CRUD
+
   ngOnInit() {
+    this.getAppointments();
   }
+  
 
 }

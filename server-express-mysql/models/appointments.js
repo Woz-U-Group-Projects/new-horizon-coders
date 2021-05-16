@@ -3,8 +3,8 @@ module.exports = function(sequelize, DataTypes) {
   return sequelize.define('appointments', {
     appointment_Id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     appointment_date: {
       type: DataTypes.DATE,
@@ -31,3 +31,8 @@ module.exports = function(sequelize, DataTypes) {
     ]
   });
 };
+// Task.associate = function(models) {
+//   // associations can be defined here
+// };
+// return Task;
+// };
