@@ -17,8 +17,8 @@ import { Signup } from "./models/signup";
         return this.http.get<Signup[]>(this.apiUrl);
     }
 
-    addSignup(task): Observable<Signup> {
-      return this.http.post<Signup>(this.apiUrl, task);
+    addSignup(signup): Observable<Signup> {
+      return this.http.post<Signup>(this.apiUrl, signup);
     }
   
   }
