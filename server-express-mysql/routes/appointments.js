@@ -1,37 +1,54 @@
-
 var express = require("express");
 var router = express.Router();
 var models = require("../models");
-// var appointments = require('../models/appointments');
 
 
-router.get("/appointments", function(req, res, next) {
-    models.Appointments.findAll().then(appointments => res.json(appointments));
+
+router.get("/", function(req, res, next) {
+    models.appointments.findAll().then(results => res.json(results));
   });
   
-router.get('/appointments', (req,res,next) => {
-    const{ appointment_date } = req.body;
-    if (!appointment_date ){
-        return res.status (400).json({ message:"Appointment Date Required"});
-    }
-});
+// router.get('/', (req,res,next) => {
+//     const{ appointment_date } = req.body;
+//     if (!appointment_date ){
+//         return res.status (400).json({ message:"Appointment Date Required"});
+//     }
+// });
   
 
-  router.post("/appointments", function(req, res, next) {
-    let newAppointments = new models.appointments();
-    newAppointments.appointment_date = req.body.date;
-    newAppointments.confirmation = req.body.confirmation;
-    newAppointments.save().then(appointments => res.json(appointments));
-  });
-
-router.get('/appointments', function(req,res,next){
+  router.post("/", function(req, res, next) {
     models.appointments
-    .findAll({where: [{ model: models.appointment_date}]})
-    .then(appointmentsFound => {
-        res.setHeader('content-type', 'appointments/json');
-        res.send(JSON.stringify(appointmentsFound))
+    .findOrCreate({
+      where: {
+      appointment_Id: req.body.appointment_Id // change to name
+      },
+    defaults: {
+      appointment_date: req.body.appointment_date,
+      confirmation: req.body.confirmation
+    }
     })
-});
+    .spread(function(result, created) {
+      if(created){
+        res.redirect('/apointments/' + result.appointment_Id);
+      // }else{
+      //   res.status(400);
+      //   res.send("Appointment Time Already Exist")
+      // }
+        res.send("Created!")
+      } else {
+        res.send("ERROR")
+      }
+    })
+  });
+
+// router.get('/appointments', function(req,res,next){
+//     models.appointments
+//     .findAll({where: [{ model: models.appointment_date}]})
+//     .then(appointmentsFound => {
+//         res.setHeader('content-type', 'appointments/json');
+//         res.send(JSON.stringify(appointmentsFound))
+//     })
+// });
  // router.delete("/:id", function(req, res, next) {
   //   let appointment_Id = parseInt(req.params.id);
   //   models.Appointments.findByPk(taskId)
