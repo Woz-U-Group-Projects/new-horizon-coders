@@ -3,6 +3,7 @@ module.exports = function(sequelize, DataTypes) {
   return sequelize.define('staff', {
     staff_Id: {
       type: DataTypes.INTEGER,
+      auto_increment: true,
       allowNull: false,
       primaryKey: true
     },
@@ -18,7 +19,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(100),
       allowNull: false
     },
-    password_Id: {
+    password: {
       type: DataTypes.STRING(100),
       allowNull: false
     },
