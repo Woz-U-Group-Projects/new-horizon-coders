@@ -16,17 +16,14 @@
       </div>
     </nav>
   </div>
+
+
 <div class= "container">
     <h1>Appointments</h1>
-
-    
-    <router-outlet></router-outlet>
-
-   
-   
 </div >
+
 <div class="container">
-<form>
+  <form action="/appointments" method="POST">
         <div class="form-group">
             <label for="first_name">First Name: </label>
             <input required type="text" class="form-control" ngModel name="first_name" #first_name="ngModel">
@@ -78,8 +75,17 @@
 </form>
 
 </div>
-<!-- <tr *ngFor="let appointment of appointments">
-  <ul>{{appointment_Id}}
-  {{appointment_date}}
-  {{confirmation}}
-  </ul> -->
+
+
+ 
+
+
+
+  <!-- <ul>
+    <li *ngFor="let appointment of appointments">
+        {{appointments.appointment_date}} :
+        {{ appointment.confirm ? "confirm" : "not confirmed"}}
+        <button type="button" class="btn btn-success">Confirm</button>
+    </li>
+</ul> -->
+  <router-outlet></router-outlet>

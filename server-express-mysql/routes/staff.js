@@ -4,11 +4,20 @@ var models = require("../models");
 
 
 
-router.get("/", function(req, res, next) {
-    models.staff.findAll({ model: models.staff})
-    .then(results => res.json(results));
+
+
+router.get('/', function(req, res, next) {
+  models.staff.findAll({}).then(foundStaff => {
+    const mappedStaff = foundStaff.map(staff => ({
+      StaffUser: staff.user_name,
+      Name: `${staff.first_name} ${staff.last_name}`
+    }));
+    res.send(JSON.stringify(mappedStaff));
   });
-  
+});
+
+
+
 //post a staff fields required
   router.post("/", function(req, res, next) {
     models.staff
@@ -24,27 +33,30 @@ router.get("/", function(req, res, next) {
     // misc:req.body.misc
     }
     })
-    .then(results => res.json(results));
-    // .spread(function(result, created) {
-    //   if(created){
-    //     // res.render("/" + result.);
-    //     res.send( "Welcome to walk the dog & services");
-    //   } else {
-    //     res.status(400);
-    //     res.send("error")
-    //   }
-    // })
+    // .then(results => res.json(results));
+    .spread(function(result, created) {
+      if(created){
+        res.render("/login" + result.staff_Id);
+        // res.send( "Welcome to walk the dog & services");
+      } else {
+        res.status(400);
+        res.send("error")
+      }
+    })
   });
 
-//gets staff by Id and removes the employee
- router.delete("/:id", function(req, res, next) {
-    let staff_Id = parseInt(req.params.id);
-    models.customers.findByPk(staff_Id)
-      .then(staff => staff.destroy())
-      .then(() => res.send({ staff_Id }))
-      .catch(err => res.status(400).send(err));
-  });
 
+
+
+// gets staff by Id and removes the employee
+
+router.delete("/:id", function(req, res, next) {
+  let staff_Id = parseInt(req.params.id);
+  models.staff.findByPk(staff_Id)
+    .then(staff => staff.destroy())
+    .then(() => res.send({ staff_Id }))
+    .catch(err => res.status(400).send(err));
+});
 
 
 

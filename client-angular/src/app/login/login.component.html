@@ -19,8 +19,34 @@
         </div>
       </nav>
     </div>
+    <div class="container">
+      <form action="/login" method="POST">
+            <div class="form-group">
+                <label for="first_name">First Name: </label>
+                <input required type="text" class="form-control" ngModel name="first_name" #first_name="ngModel">
+                <div class="alert alert-danger" *ngIf="first_name.touched && !first_name.valid">Required Field</div>
+            </div>
+            <div class="form-group">
+                <label for="last_name">Last Name: </label>
+                <input required type="text" class="form-control" ngModel name="last_name" #last_name="ngModel">
+                <div class="alert alert-danger" *ngIf="last_name.touched && !last_name.valid">Required Field</div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email: </label>
+                <input required type="text" class="form-control" ngModel name="email" #email="ngModel">
+                <div class="alert alert-danger" *ngIf="email.touched && !email.valid">Required Field</div>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number: </label>
+                <input required  maxLength="10" type="integer" class="form-control" ngModel name="phone" #phone="ngModel">
+                <div class="alert alert-danger" *ngIf="phone.touched && !phone.valid">Required Field</div>
 
+                <button (click)="onClick" class="btn btn-primary">Add</button>
+            </div> 
 
-<h1>Hello, {{staff.first_name}}</h1>
-<p>last name: {{staff.last_name}}</p>
-<p>username: {{staff.user_name}}</p>
+<!-- {{#each customers}} -->
+<h1>Hello, {{customers.first_name}}</h1>
+<p>last name: {{customers.last_name}}</p>
+<p>username: {{customers.user_name}}</p>
+<!-- {{/each}} -->
+

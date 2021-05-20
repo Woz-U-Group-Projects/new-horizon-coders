@@ -9,28 +9,27 @@ router.get("/", function(req, res, next) {
     .then(results => res.json(results));
   });
   
-//post an appointment and but needs to add a appointment name bc its supposed to autio increment the Id
+//post an appointment 
   router.post("/", function(req, res, next) {
     models.appointments
     .findOrCreate({
       where: {
-      appointment_Id: req.body.appointment_Id // change to name?
+      appointment_Id: req.body.appointment_Id 
       },
     defaults: {
       appointment_date: req.body.appointment_date,
       confirmation: req.body.confirmation
     }
     })
-    .then(results => res.json(results));
-    // .spread(function(result, created) {
-    //   if(created){
-    //     // res.render("/" + result.appointment_date);
-    //     res.send( "Appointment Created!");
-    //   } else {
-    //     res.status(400);
-    //     res.send("error")
-    //   }
-    // })
+    .spread(function(result, created) {
+      if(created){
+        res.render("/appointments/" + result.appointment_date);
+        // res.send( "Appointment Created!");
+      } else {
+        res.status(400);
+        res.send("Appointment already Exist")
+      }
+    })
   });
 
 //gets appointments by Id and removes the appointment

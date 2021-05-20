@@ -11,10 +11,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbdDatepickerBasic } from './datepicker';
 import { NgbdTimepickerBasic } from './timepicker';
 import { StoreComponent } from './store/store.component';
-import { LoginComponent } from './login/login.component'
+import { LoginComponent } from './login/login.component';
+import { ProfilesComponent } from './profiles/profiles.component'
 
 @NgModule({
-  declarations: [AppComponent, AppointmentsComponent, NgbdDatepickerBasic, NgbdTimepickerBasic, StoreComponent, LoginComponent ],
+  declarations: [AppComponent, AppointmentsComponent, NgbdDatepickerBasic, NgbdTimepickerBasic, StoreComponent, LoginComponent, ProfilesComponent ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, NgbModule,],
   providers: [AppointmentsService],
   bootstrap: [AppComponent]
