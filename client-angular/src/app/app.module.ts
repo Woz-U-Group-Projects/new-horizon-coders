@@ -3,20 +3,29 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProfilesModule } from './modules/profiles/profiles.module'
+
 import { AppComponent } from "./app.component";
 
 import { AppointmentsComponent } from './appointments/appointments.component';
 import { AppointmentsService } from "./appointments.service";
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgbdDatepickerBasic } from './datepicker';
-import { NgbdTimepickerBasic } from './timepicker';
 import { StoreComponent } from './store/store.component';
 import { LoginComponent } from './login/login.component';
-import { ProfilesComponent } from './profiles/profiles.component'
+import { SignupComponent } from './signup/signup.component';
+
+
+
+import { NgbdDatepickerBasic } from './datepicker';
+import { NgbdTimepickerBasic } from './timepicker';
+// import { DisplayProfilesComponent } from './display-profiles/display-profiles.component'
+
+
+
 
 @NgModule({
-  declarations: [AppComponent, AppointmentsComponent, NgbdDatepickerBasic, NgbdTimepickerBasic, StoreComponent, LoginComponent, ProfilesComponent ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, NgbModule,],
+  declarations: [AppComponent, AppointmentsComponent, NgbdDatepickerBasic, NgbdTimepickerBasic, StoreComponent,SignupComponent, LoginComponent, ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, NgbModule, ProfilesModule ],
   providers: [AppointmentsService],
   bootstrap: [AppComponent]
 })

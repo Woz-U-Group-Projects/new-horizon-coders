@@ -3,7 +3,7 @@
 
 export class Appointments {
     appointment_Id: number;
-    appointmentDate:string;
+    appointment_date:string;
     confirmation: boolean
 }
 

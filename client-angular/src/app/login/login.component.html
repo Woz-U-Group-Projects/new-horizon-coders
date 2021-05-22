@@ -1,52 +1,53 @@
-
-
 <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="home">Walk the Dog & services</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="#">Sign up</a>
-              <a class="nav-link" href="login">Login</a>
-              <a class="nav-link" href="./appointments">Appointments</a>
-             
-              <a class="nav-link" href="#">Profiles</a>
-            </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="home">Walk the Dog & services</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="signup">Sign up</a>
+            <a class="nav-link" href="login">Login</a>
+            <a class="nav-link" href="appointments">Appointments</a>
+            <a class="nav-link" href="profiles">Profiles</a>
           </div>
         </div>
-      </nav>
-    </div>
-    <div class="container">
-      <form action="/login" method="POST">
-            <div class="form-group">
-                <label for="first_name">First Name: </label>
-                <input required type="text" class="form-control" ngModel name="first_name" #first_name="ngModel">
-                <div class="alert alert-danger" *ngIf="first_name.touched && !first_name.valid">Required Field</div>
-            </div>
-            <div class="form-group">
-                <label for="last_name">Last Name: </label>
-                <input required type="text" class="form-control" ngModel name="last_name" #last_name="ngModel">
-                <div class="alert alert-danger" *ngIf="last_name.touched && !last_name.valid">Required Field</div>
-            </div>
-            <div class="form-group">
-                <label for="email">Email: </label>
-                <input required type="text" class="form-control" ngModel name="email" #email="ngModel">
-                <div class="alert alert-danger" *ngIf="email.touched && !email.valid">Required Field</div>
-            </div>
-            <div class="form-group">
-                <label for="phone">Phone Number: </label>
-                <input required  maxLength="10" type="integer" class="form-control" ngModel name="phone" #phone="ngModel">
-                <div class="alert alert-danger" *ngIf="phone.touched && !phone.valid">Required Field</div>
+      </div>
+    </nav>
+  </div>
 
-                <button (click)="onClick" class="btn btn-primary">Add</button>
-            </div> 
+
+
+
+    <div class="container">
+
+      <h1>Login</h1>
+
+      <form action="login" method="POST">
+        <div class="container">
+          <form (ngSubmit)='onSubmit()'>
+            <div class="form-group">
+              <label for="user_name">Username:</label>
+              <input required type="text" class="form-control" ngModel name="user_name" #user_name="ngModel">
+              <div class="alert alert-danger" *ngIf="user_name.touched && !user_name.valid">Required Field</div>
+            </div>
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <input required type="text" class="form-control" ngModel name="password" #password="ngModel">
+              <div class="alert alert-danger" *ngIf="password.touched && !password.valid">Required Field</div>
+            </div>
+        
+            <div class="form-group">
+              <button type="button"  class="btn btn-success btn-lg" onclick="window.location.href='profiles'">Login</button>
+            </div>
+          </form>
+        </div>
+  
 
 <!-- {{#each customers}} -->
-<h1>Hello, {{customers.first_name}}</h1>
-<p>last name: {{customers.last_name}}</p>
-<p>username: {{customers.user_name}}</p>
+<h1>Hello, {{customers.first_name}} {{staff.first_name}} </h1>
+<p>last name: {{customers.last_name}} {{staff.last_name}} </p>
+<p>username: {{customers.user_name}} {{staff.user_name}} </p>
 <!-- {{/each}} -->
 

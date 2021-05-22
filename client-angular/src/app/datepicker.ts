@@ -13,7 +13,12 @@ export class NgbdDatepickerBasic {
   constructor(private calendar: NgbCalendar) {
   }
 
-  selectToday() {
+  ngOnInit() {
     this.model = this.calendar.getToday();
-  }
+ }
 }
+
+//   selectToday() {
+//     this.model = this.calendar.getToday();
+//   }
+// }

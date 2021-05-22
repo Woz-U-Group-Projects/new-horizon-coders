@@ -8,11 +8,11 @@ var models = require("../models");
 
 router.get('/', function(req, res, next) {
   models.staff.findAll({}).then(foundStaff => {
-    const mappedStaff = foundStaff.map(staff => ({
-      StaffUser: staff.user_name,
-      Name: `${staff.first_name} ${staff.last_name}`
-    }));
-    res.send(JSON.stringify(mappedStaff));
+    // const mappedStaff = foundStaff.map(staff => ({
+      // StaffUser: staff.user_name,
+      // Name: `${staff.first_name} ${staff.last_name}`
+    // }));
+    res.send(JSON.stringify(foundStaff));
   });
 });
 

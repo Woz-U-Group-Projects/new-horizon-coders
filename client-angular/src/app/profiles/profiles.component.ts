@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,   } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from "rxjs";
+
+import { Staff } from '../../app/models/staff'
+
 
 @Component({
   selector: 'app-profiles',
@@ -6,10 +11,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profiles.component.css']
 })
 export class ProfilesComponent implements OnInit {
+  private profilesRoute = 'http://localhost:3001/staff';
+   public staff: Staff[] = [];
+  //  staff: Staff;
+  
+  constructor( private http: HttpClient) { }
 
-  constructor() { }
+
+
+  getStaff(){
+    this.http.get<Staff[]>(this.profilesRoute).subscribe(staff => {
+      this.staff = staff;
+      console.log("Staff", this.staff);
+
+    });
+  }
 
   ngOnInit() {
+    this.getStaff();
   }
 
 }

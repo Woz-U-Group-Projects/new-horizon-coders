@@ -1,1 +1,35 @@
-<p>profiles works!</p>
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="home">Walk the Dog & services</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="signup">Sign up</a>
+            <a class="nav-link" href="login">Login</a>
+            <a class="nav-link" href="appointments">Appointments</a>
+            <a class="nav-link" href="profiles">Profiles</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<div class="staff container">
+    <h2>
+      Staff Profiles
+    </h2>
+    <app-display-profiles *ngFor="let staff of staff" [staff]="staff">
+    </app-display-profiles>
+  </div>
+ 
+
+ <section class="container-fluid staff">
+
+
+          
+          </section>  
+          

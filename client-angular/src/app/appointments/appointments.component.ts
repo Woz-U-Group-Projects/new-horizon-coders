@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AppointmentsService } from "../appointments.service";
 import { Appointments } from "../models/appointments";
-import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-appointments',

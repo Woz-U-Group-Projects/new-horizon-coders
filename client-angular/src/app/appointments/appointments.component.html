@@ -7,10 +7,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link active" aria-current="page" href="#">Sign up</a>
+            <a class="nav-link active" aria-current="page" href="signup">Sign up</a>
             <a class="nav-link" href="login">Login</a>
-            <a class="nav-link" href="./appointments">Appointments</a>
-            <a class="nav-link" href="#">Profiles</a>
+            <a class="nav-link" href="appointments">Appointments</a>
+            <a class="nav-link" href="profiles">Profiles</a>
           </div>
         </div>
       </div>
@@ -23,7 +23,7 @@
 </div >
 
 <div class="container">
-  <form action="/appointments" method="POST">
+  <form action="appointments" method="POST">
         <div class="form-group">
             <label for="first_name">First Name: </label>
             <input required type="text" class="form-control" ngModel name="first_name" #first_name="ngModel">
@@ -68,24 +68,15 @@
 
         <div class="form-group">
             <h3>Add Appointment</h3>
-   <button (click)="addAppointment()" class="btn btn-primary">Add</button>
+   <button onClick="addAppointment()" class="btn btn-primary">Add</button>
            
         </div>
     
 </form>
 
 </div>
-
-
  
-
-
-
-  <!-- <ul>
-    <li *ngFor="let appointment of appointments">
-        {{appointments.appointment_date}} :
-        {{ appointment.confirm ? "confirm" : "not confirmed"}}
-        <button type="button" class="btn btn-success">Confirm</button>
-    </li>
-</ul> -->
+        <!-- {{appointments.appointment_date}} :
+        {{ confirm : confirm }}: -->
+       
   <router-outlet></router-outlet>
