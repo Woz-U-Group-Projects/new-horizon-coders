@@ -3,8 +3,18 @@
     font-size: 24px;
 }
 
-.card-area{
+.card-body{
     background-color: blue;
+}
+
+.card-title{
+    font-family: American Typewriter, serif;
+    font-size: 150%;
+}
+
+.card-text{
+    font-family: American Typewriter, serif;
+    font-size: 100%;
 }
 
 .h5{
