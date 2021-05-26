@@ -2,15 +2,22 @@ var express = require("express");
 var router = express.Router();
 var models = require("../models");
 
+
 router.get('/', function(req, res, next) {
   models.customers.findAll({}).then(foundCustomers => {
-    const mappedCustomers = foundCustomers.map(customers => ({
-    CustomerUser: customers.user_name,
-      Name: `${customers.first_name} ${customers.last_name}`
-    }));
-    res.send(JSON.stringify(mappedCustomers));
+    res.send(JSON.stringify(foundCustomers));
   });
 });
+
+// router.get('/', function(req, res, next) {
+//   models.customers.findAll({}).then(foundCustomers => {
+//     const mappedCustomers = foundCustomers.map(customers => ({
+//     CustomerUser: customers.user_name,
+//       Name: `${customers.first_name} ${customers.last_name}`
+//     }));
+//     res.send(JSON.stringify(mappedCustomers));
+//   });
+// });
 
 
 

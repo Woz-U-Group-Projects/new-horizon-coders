@@ -72,7 +72,7 @@
             <div class="alert alert-danger" *ngIf="state.touched && !state.valid">Required Field</div>
         </div>
         <div class="form-group">
-            <button class="btn btn-primary">Submit</button>
+            <button (click)="onClickAddCustomer()">SignUp</button>
         </div>
     </form>
 </div>

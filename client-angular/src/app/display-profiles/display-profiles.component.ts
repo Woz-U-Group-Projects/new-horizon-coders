@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Staff } from '../models/staff';
 
 
+
 @Component({
   selector: 'app-display-profiles',
   templateUrl: './display-profiles.component.html',
@@ -9,6 +10,7 @@ import { Staff } from '../models/staff';
 })
 export class DisplayProfilesComponent implements OnInit {
   @Input() staff: Staff;
+ 
 
   constructor() { }
 

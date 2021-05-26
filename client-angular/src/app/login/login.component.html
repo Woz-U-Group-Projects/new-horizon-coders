@@ -9,7 +9,7 @@
           <div class="navbar-nav">
             <a class="nav-link active" aria-current="page" href="signup">Sign up</a>
             <a class="nav-link" href="login">Login</a>
-            <a class="nav-link" href="appointments">Appointments</a>
+            <!-- <a class="nav-link" href="appointments">Appointments</a> -->
             <a class="nav-link" href="profiles">Profiles</a>
           </div>
         </div>
@@ -19,35 +19,33 @@
 
 
 
-
+   
     <div class="container">
 
       <h1>Login</h1>
+        <h3> Book your appointment with the dog walker or dog trainer of your choice </h3>
+        <app-display-login *ngFor="let customers of customers"  [customers]="customers"></app-display-login>
+        
+      </div> 
 
-      <form action="login" method="POST">
+
+      <form action="login" method="GET">
         <div class="container">
           <form (ngSubmit)='onSubmit()'>
-            <div class="form-group">
+            <div class=" form-group">
               <label for="user_name">Username:</label>
               <input required type="text" class="form-control" ngModel name="user_name" #user_name="ngModel">
               <div class="alert alert-danger" *ngIf="user_name.touched && !user_name.valid">Required Field</div>
             </div>
-            <div class="form-group">
-              <label for="password">Password:</label>
-              <input required type="text" class="form-control" ngModel name="password" #password="ngModel">
-              <div class="alert alert-danger" *ngIf="password.touched && !password.valid">Required Field</div>
+            <div class=" form-group">
+              <label for="password_Id">Password:</label>
+              <input required type="text" class="form-control" ngModel name="password_Id" #password_Id="ngModel">
+              <div class="alert alert-danger" *ngIf="password_Id.touched && !password_Id.valid">Required Field</div>
             </div>
         
             <div class="form-group">
               <button type="button"  class="btn btn-success btn-lg" onclick="window.location.href='profiles'">Login</button>
             </div>
-          </form>
-        </div>
-  
-
-<!-- {{#each customers}} -->
-<h1>Hello, {{customers.first_name}} {{staff.first_name}} </h1>
-<p>last name: {{customers.last_name}} {{staff.last_name}} </p>
-<p>username: {{customers.user_name}} {{staff.user_name}} </p>
-<!-- {{/each}} -->
-
+          </form> 
+        </div> 
+    

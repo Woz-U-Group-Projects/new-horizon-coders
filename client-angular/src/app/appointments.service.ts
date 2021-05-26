@@ -10,7 +10,7 @@ import { Observable } from "rxjs";
 export class AppointmentsService {
   
   apiUrl: string = "http://localhost:3001/appointments";
-  // private profilesRoute = 'http://localhost:3001/staff';
+
 
   constructor(private http: HttpClient) { }
 

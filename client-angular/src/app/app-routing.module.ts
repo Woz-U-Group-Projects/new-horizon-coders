@@ -5,7 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { StoreComponent } from './store/store.component';
 import { ProfilesComponent } from './profiles/profiles.component';
 import { SignupComponent } from './signup/signup.component';
-import { DisplayProfilesComponent } from './display-profiles/display-profiles.component'
+import { DisplayLoginComponent } from './display-login/display-login.component'
 
 
 const routes: Routes = [
@@ -38,9 +38,10 @@ const routes: Routes = [
       component: ProfilesComponent
     },
     {
-      path:'display-profiles',
-      component: DisplayProfilesComponent
-    }
+      path:'display-login',
+      component:DisplayLoginComponent
+    },
+  
 ];
 
 @NgModule({

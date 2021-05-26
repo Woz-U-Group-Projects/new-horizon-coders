@@ -1,14 +1,25 @@
+<section class="container-fluid style=float:left staff">
+  <div class="card col-sm-12 col-md-6 col-lg-6" style="width: 18rem">
+    <img class="card-img-top" src="images/silhouette.png" alt="Profile Img">
+    <div class="card-body profiles">
+      <h5 class="card-title">
+        Name:{{ staff.first_name }} {{ staff.last_name }}
+      </h5>
+      <p class="card-text">Description:{{ staff.misc }}</p>
+      <button type="button"  class="btn btn-success btn-lg" onclick="window.location.href='appointments'">Book Appointment</button>
+    </div>
+  </div>
+</section>
 
-<section class="container-fluid staff">
-    <div class="card col-sm-12 col-md-3 col-lg-6"  style="width: 18rem;">
-        <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
-         <div class="card-body profiles">
-            <h5  class="card-title">Name:{{staff.first_name}} {{staff.last_name}} </h5>
-            <p  class="card-text">Description:{{staff.misc}} </p>
-            <a routerLink="/profile"><button class="btn btn-success pull-right">Book Appointment!</button></a>
-        </div>
-      </div>
-   
 
-  <!-- {{staff.id + 1}}. -->
-  <!-- {{staff.user_name}}: -->
+<!-- multiple show  -->
+
+<!-- <div class="style=float:right ">
+  <h1>Hello,{{ customers.user_name }} </h1>
+  <p>{{ customers.first_name }}
+      {{ customers.last_name }}</p>
+ 
+</div> -->
+
+
+
