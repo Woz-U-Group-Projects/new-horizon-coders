@@ -9,16 +9,25 @@ router.get('/', function(req, res, next) {
   });
 });
 
-// router.get('/', function(req, res, next) {
-//   models.customers.findAll({}).then(foundCustomers => {
-//     const mappedCustomers = foundCustomers.map(customers => ({
-//     CustomerUser: customers.user_name,
-//       Name: `${customers.first_name} ${customers.last_name}`
-//     }));
-//     res.send(JSON.stringify(mappedCustomers));
-//   });
-// });
-
+//for profile view
+router.get('/profile/:id', function (req, res, next) {
+  models.customers
+    .findByPk(parseInt(req.params.id))
+    .then(customers => {
+      if (customers) {
+        res.render('profile', {
+          FirstName: customers.first_name,
+          LastName: customers.last_name,
+          Username: customers.user_name,
+          DogName: customers.dog_name,
+          DogAge: customers.Dog_age,
+          Misc: customers.misc
+        });
+      } else {
+        res.send('User not found');
+      }
+    });
+  });
 
 
   
@@ -42,8 +51,8 @@ router.get('/', function(req, res, next) {
     })
     .spread(function(result,created) {
       if (created) {
-        res.redirect('/login/' + result.customer_Id );
-       
+        res.redirect('profiles' + result.customer_Id );
+        // res.send('Successfully created');
       } else {
         res.send("This person already exist!")
       }

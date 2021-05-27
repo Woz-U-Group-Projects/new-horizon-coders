@@ -10,7 +10,7 @@
             <a class="nav-link active" aria-current="page" href="signup">Sign up</a>
             <a class="nav-link" href="login">Login</a>
             <!-- <a class="nav-link" href="appointments">Appointments</a> -->
-            <a class="nav-link" href="profiles">Profiles</a>
+            <!-- <a class="nav-link" href="profiles">Profiles</a> -->
           </div>
         </div>
       </div>
@@ -20,7 +20,7 @@
 
 <div class="staff container ">
     <h2>
-      Staff Profiles
+      Choose from our staff
     </h2>
     <app-display-profiles *ngFor="let staff of staff" [staff]="staff">
     </app-display-profiles>
@@ -28,15 +28,26 @@
  
 
 
-
-
-    <!-- only one shows -->
-
-<div class="container">
+    <!-- logged in person only one shows -->
+<section class= "container justify-right">
+<div>
       <h1>Hello,{{ customers.user_name }} </h1>
       <p>{{ customers.first_name }}
           {{ customers.last_name }}</p>
+
+          <p> {{customers.dog_name}}
+            {{customers.Dog_age}}
+          {{customers.misc}} </p>
      
     </div> 
+
+<!-- show only for logged in person -->
+    <div>
+      <h2>List of Appointments,</h2>
+      <p>{{appointments.appointments_date}} 
+        {{confirmation}}
+      </p>
+    </div>
+  </section>
           
           

@@ -9,8 +9,8 @@
             <div class="navbar-nav">
               <a class="nav-link active" aria-current="page" href="signup">Sign up</a>
               <a class="nav-link" href="login">Login</a>
-              <a class="nav-link" href="appointments">Appointments</a>
-              <a class="nav-link" href="profiles">Profiles</a>
+              <!-- <a class="nav-link" href="appointments">Appointments</a> -->
+              <!-- <a class="nav-link" href="profiles">Profiles</a> -->
             </div>
           </div>
         </div>
@@ -25,7 +25,7 @@
 </div>
 
 <div class="container">
-    <form (ngSubmit)='onSubmit()'>
+    <form id="signup" name="signup" method="POST" action="/customers/signup" (ngSubmit)='onSubmit()'>
         <div class="form-group">
             <label for="first_name">First Name: </label>
             <input required type="text" class="form-control" ngModel name="first_name" #first_name="ngModel">
@@ -42,9 +42,9 @@
             <div class="alert alert-danger" *ngIf="user_name.touched && !user_name.valid">Required Field</div>
         </div>
         <div class="form-group">
-            <label for="password">Password:</label>
-            <input required type="text" class="form-control" ngModel name="password" #password="ngModel">
-            <div class="alert alert-danger" *ngIf="password.touched && !password.valid">Required Field</div>
+            <label for="password_Id">Password:</label>
+            <input required type="text" class="form-control" ngModel name="password_Id" #password="ngModel">
+            <div class="alert alert-danger" *ngIf="password_Id.touched && !password_Id.valid">Required Field</div>
         </div>
         <div class="form-group">
             <label for="email">Email: </label>
@@ -62,17 +62,17 @@
             <div class="alert alert-danger" *ngIf="address.touched && !address.valid">Required Field</div>
         </div>
         <div class="form-group">
-            <label for=city>City: </label>
-            <input required type="text" class="form-control" ngModel name="city" #city="ngModel">
-            <div class="alert alert-danger" *ngIf="city.touched && !city.valid">Required Field</div>
+            <label for=dog_name>Dog Name: </label>
+            <input required type="text" class="form-control" ngModel name="dog_name" #city="ngModel">
+            <div class="alert alert-danger" *ngIf="dog_name.touched && !dog_name.valid">Required Field</div>
         </div>
         <div class="form-group">
-            <label for=state>State: </label>
-            <input required type="text" class="form-control" ngModel name="state" #state="ngModel">
-            <div class="alert alert-danger" *ngIf="state.touched && !state.valid">Required Field</div>
+            <label for=Dog_age>Dog Age: </label>
+            <input required type="integer" class="form-control" ngModel name="Dog_age" #state="ngModel">
+            <div class="alert alert-danger" *ngIf="Dog_age.touched && !Dog_age.valid">Required Field</div>
         </div>
         <div class="form-group">
-            <button (click)="onClickAddCustomer()">SignUp</button>
+            <button class="btn btn-success btn-lg" (click)="onClickAddCustomer()">SignUp</button>
         </div>
     </form>
 </div>

@@ -10,7 +10,7 @@
             <a class="nav-link active" aria-current="page" href="signup">Sign up</a>
             <a class="nav-link" href="login">Login</a>
             <!-- <a class="nav-link" href="appointments">Appointments</a> -->
-            <a class="nav-link" href="profiles">Profiles</a>
+            <!-- <a class="nav-link" href="profiles">Profiles</a> -->
           </div>
         </div>
       </div>
@@ -21,15 +21,13 @@
 
    
     <div class="container">
-
-      <h1>Login</h1>
         <h3> Book your appointment with the dog walker or dog trainer of your choice </h3>
         <app-display-login *ngFor="let customers of customers"  [customers]="customers"></app-display-login>
         
       </div> 
 
 
-      <form action="login" method="GET">
+      <form id="login" name="login" method="Get" action="/customers/login">
         <div class="container">
           <form (ngSubmit)='onSubmit()'>
             <div class=" form-group">
