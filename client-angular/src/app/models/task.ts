@@ -1,5 +1,5 @@
 export class Task {
-  id: string;
-  name: string;
-  complete: boolean;
-}
+    id: string;
+    name: string;
+    complete: boolean;
+  }
