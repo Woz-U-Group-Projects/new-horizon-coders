@@ -1,61 +1,74 @@
 <!DOCTYPE html>
-
+<html>
 <head>
-    <div class= "container">
-        <h1>Meet Our Dog Walkers</h1>
-        <link rel="stylesheet" href="dogWalkers.css">
-        <img src="matt-nelson-aI3EBLvcyu4-unsplash.jpg" alt="dogs.jpg">
-        <router-outlet></router-outlet>
-    </div >
+    <title>Meet Our Dog Walkers!</title>
+    <link rel="stylesheet" type="text/css" href="dogWalkers.css">
 </head>
 
 <body>
-<div class = "container">
-    <form>
-    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="cristian-castillo-HcoOFfOH8S8-unsplash" alt="dogwalker-1.jpg">
-        <div class="card-body">
-            <h5 class="card-title">Name:</h5>
-            <p class="card-text">Description:</p>
-            <a routerLink="/appointments"><button class="btn btn-success pull-right">Book Appointment!</button></a>
+    <header>
+        <img class="background" src="https://unsplash.com/photos/U6nlG0Y5sfs?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink" alt="dogs2">
+        <div class="main">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Appointments</a></li>
+                <li><a href="#">Profiles</a></li>
+                <li><a href="#">Sign Up</a></li>
+            </ul>
         </div>
-    </div>
-
-
-    <div class="card-" style="width: 18rem;">
-        <img class="card-img-top" src="yogendra-singh-K8JxScoZb4A-unsplash" alt="dogwalker-2">
-        <div class="card-body">
-            <h5 class="card-title">Name:</h5>
-            <p class="card-text">Description:</p>
-            <a routerLink="/appointments"><button class="btn btn-success pull-right">Book Appointment!</button></a>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="olivia-hutcherson-irR3XM9mmKE-unsplash" alt="dogwalker-3">
-            <div class="card-body">
-                <h5 class="card-title">Name:</h5>
-                <p class="card-text">Description:</p>
-                <a routerLink="/appointments"><button class="btn btn-success pull-right">Book Appointment!</button></a>
-            </div>
-
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="jorge-salvador-Y6GZ97S-mcY-unsplash" alt="dogwalker-4">
-                <div class="card-body">
-                    <h5 class="card-title">Name:</h5>
-                    <p class="card-text">Description:</p>
-                    <a routerLink="/appointments"><button class="btn btn-success pull-right">Book
-                            Appointment!</button></a>
-                </div>
-
+        <h3>Your Dog's Best Friend Is Just A Click Away!</h3>
+    </header>
+    <div class="container">
+        <form>
+            
                 <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="valerie-elash-HNCX1RT1qRk-unsplash" alt="dogwalker-5">
+                    <img class="card-img-top" src="cristian-castillo-HcoOFfOH8S8-unsplash" alt="dogWalker-1">
                     <div class="card-body">
                         <h5 class="card-title">Name:</h5>
                         <p class="card-text">Description:</p>
                         <a routerLink="/appointments"><button class="btn btn-success pull-right">Book
                                 Appointment!</button></a>
                     </div>
-</div>
-</form>                 
+                </div>
 
+
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="jorge-salvador-Y6GZ97S-mcY-unsplash" alt="dogWalker-2">
+                    <div class="card-body">
+                        <h5 class="card-title">Name:</h5>
+                        <p class="card-text">Description:</p>
+                        <a routerLink="/appointments"><button class="btn btn-success pull-right">Book
+                                Appointment!</button></a>
+                    </div>
+
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="matt-nelson-aI3EBLvcyu4-unsplash" alt="dogWalker-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Name:</h5>
+                            <p class="card-text">Description:</p>
+                            <a routerLink="/appointments"><button class="btn btn-success pull-right">Book
+                                    Appointment!</button></a>
+                        </div>
+
+                        <div class="card" style="width: 18rem;">
+                            <img src="olivia-hutcherson-irR3XM9mmKE-unsplash" alt="dogWalker-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Name:</h5>
+                                <p class="card-text">Description:</p>
+                                <a routerLink="/appointments"><button class="btn btn-success pull-right">Book
+                                        Appointment!</button></a>
+                            </div>
+
+                            <div class="card" style="width: 18rem;">
+                                <img class="card-img-top" src="yogendra-singh-K8JxScoZb4A-unsplash" alt="dogWalker-5">
+                                <div class="card-body">
+                                    <h5 class="card-title">Name:</h5>
+                                    <p class="card-text">Description:</p>
+                                    <a routerLink="/appointments"><button class="btn btn-success pull-right">Book
+                                            Appointment!</button></a>
+                                </div>
+                            </div>
+            
+        </form>
 </body>
+</html>
