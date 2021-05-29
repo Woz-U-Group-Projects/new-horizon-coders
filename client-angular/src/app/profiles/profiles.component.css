@@ -33,9 +33,10 @@ ul, li, a:hover{
 }
 
 .card-body{
-    background-color: lawngreen;
-    top: 50%;
-    left: 50%;
+    float: right;
+    width: 300px;
+    border: 3px solid #73AD21;
+    padding: 10px;
 }
 
 .card-title{
@@ -44,6 +45,7 @@ ul, li, a:hover{
     top: 50%;
     left: 50%;
     color:black;
+    text-align: center;
 }
 
 .card-text{
@@ -52,6 +54,7 @@ ul, li, a:hover{
     top: 50%;
     left: 50%;
     color:black;
+    text-align: center;
 }
 
 .background{
