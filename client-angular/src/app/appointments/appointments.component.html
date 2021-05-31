@@ -1,9 +1,23 @@
-
+<head>
+    <title>Book An Appointment!</title>
 <div class= "container">
     <h1>Appointments</h1>
     <router-outlet></router-outlet>
 </div >
-<div class="container">
+<link rel="stylesheet" type="text/css" href="appointments.component.css">
+</head>
+
+<body>
+    <div class="main">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Profiles</a></li>
+            <li><a href="#">Sign Up</a></li>
+            <li><a href="#">Store</a></li>
+            <li><a href="#">Login</a></li>
+        </ul>
+    </div>
+    <div class="container">
 <form>
         <div class="form-group">
             <label for="first_name">First Name: </label>
@@ -28,8 +42,11 @@
 
         <p>Select Appointment</p>
 
-<ngb-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next"></ngb-datepicker>
+        <img class= "img" src= "Images/rebekah-howell-9FDKj-FrfA4-unsplash.jpg">
 
+<ngb-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next"></ngb-datepicker>
+<img class= "img" src= "Images/alvan-nee-T-0EW-SEbsE-unsplash.jpg">
+<img class= "img" src= "Images/hannah-lim-U6nlG0Y5sfs-unsplash (1).jpg">
 <hr/>
 
 <button class="btn btn-sm btn-outline-primary mr-2" (click)="selectToday()">Select Today</button>
@@ -53,3 +70,6 @@
     
 </form>
 </div>
+
+
+</body>

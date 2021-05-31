@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 
-import { Staff } from '../../app/models/staff'
+
+import { Staff } from '../../app/models/staff';
 
 
 @Component({
